@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.github.mudassir.multiwindowexample">
+
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		android:theme="@style/AppTheme">
+
+		<activity android:name="io.github.mudassir.multiwindowexample.MainActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<!-- Note: The activities must have the taskAffinity flag to work properly -->
+
+		<activity
+			android:name="io.github.mudassir.multiwindowexample.activities.UnresizableActivity"
+			android:resizeableActivity="false"
+			android:taskAffinity="" />
+
+		<activity
+			android:name="io.github.mudassir.multiwindowexample.activities.AdjacentActivity"
+			android:taskAffinity="" />
+
+		<activity
+			android:name="io.github.mudassir.multiwindowexample.activities.MinimumSizeActivity"
+			android:taskAffinity="" >
+			<layout
+				android:defaultHeight="500dp"
+				android:defaultWidth="750dp"
+				android:gravity="top|end"
+				android:minimalWidth="500dp"
+				android:minimalHeight="500dp" />
+		</activity>
+
+		<activity
+			android:name="io.github.mudassir.multiwindowexample.activities.BoundsActivity"
+			android:taskAffinity="" />
+
+		<activity
+			android:name="io.github.mudassir.multiwindowexample.activities.BasicActivity"
+			android:taskAffinity="" />
+
+	</application>
+
+</manifest>
